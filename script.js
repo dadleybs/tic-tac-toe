@@ -129,10 +129,10 @@ $(document).ready(function() {
 			}
 		} else {}
 		checkWin();
+		if (checkWin()) {
+			$('#again').show();
+		} else {}
 	});
-	if (checkWin()) {
-		$('#again').show();
-	} else {}
 	$('#again').click(function () {
 		resetBoard();
 	});
