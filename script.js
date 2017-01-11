@@ -9,6 +9,7 @@ var $6 = $(board[5]);
 var $7 = $(board[6]);
 var $8 = $(board[7]);
 var $9 = $(board[8]);
+var whoseTurn = true;
 
 function makeClicked() {
 		$('.box').click(function() {
@@ -115,15 +116,14 @@ function resetBoard() {
 $(document).ready(function() {	
 	$('#again').hide();
 	$('.box').click(function() {
-		var whoseTurn = true;
+		checkClicked();
 		if (whoseTurn) { turnRed();
 		whoseTurn = false;
-	} else if (!whoseTurn) { turnBlue();
+		} else if (!whoseTurn) { turnBlue();
 		whoseTurn = true;
-	}
-		checkClicked();
-	});
+		}
 		checkWin();
+	});
 	if (checkWin()) {
 		$('#again').show();
 	} else {}
