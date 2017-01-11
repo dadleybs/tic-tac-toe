@@ -9,25 +9,6 @@ var $6 = $(board[5]);
 var $7 = $(board[6]);
 var $8 = $(board[7]);
 var $9 = $(board[8]);
-var red1 = $1.hasClass('red');
-var red2 = $2.hasClass('red');
-var red3 = $3.hasClass('red');
-var red4 = $4.hasClass('red');
-var red5 = $5.hasClass('red');
-var red6 = $6.hasClass('red');
-var red7 = $7.hasClass('red');
-var red8 = $8.hasClass('red');
-var red9 = $9.hasClass('red');
-var blue1 = $1.hasClass('blue');
-var blue2 = $2.hasClass('blue');
-var blue3 = $3.hasClass('blue');
-var blue4 = $4.hasClass('blue');
-var blue5 = $5.hasClass('blue');
-var blue6 = $6.hasClass('blue');
-var blue7 = $7.hasClass('blue');
-var blue8 = $8.hasClass('blue');
-var blue9 = $9.hasClass('blue');
-var whoseTurn = true;
 
 function makeClicked() {
 		$('.box').click(function() {
@@ -52,6 +33,24 @@ function turnBlue() {
 		})
 	};
 function checkWin() {
+	var red1 = $1.hasClass('red');
+	var red2 = $2.hasClass('red');
+	var red3 = $3.hasClass('red');
+	var red4 = $4.hasClass('red');
+	var red5 = $5.hasClass('red');
+	var red6 = $6.hasClass('red');
+	var red7 = $7.hasClass('red');
+	var red8 = $8.hasClass('red');
+	var red9 = $9.hasClass('red');
+	var blue1 = $1.hasClass('blue');
+	var blue2 = $2.hasClass('blue');
+	var blue3 = $3.hasClass('blue');
+	var blue4 = $4.hasClass('blue');
+	var blue5 = $5.hasClass('blue');
+	var blue6 = $6.hasClass('blue');
+	var blue7 = $7.hasClass('blue');
+	var blue8 = $8.hasClass('blue');
+	var blue9 = $9.hasClass('blue');
 	// check for Red win
 	if (red3 && red5 && red7) {
 		alert("Red wins! How about a rematch?");
@@ -110,22 +109,24 @@ function checkWin() {
 };
 function resetBoard() {
 	$('.box').removeClass('red blue clicked');
+	$('#again').hide();
 }
 // Play the game
 $(document).ready(function() {	
 	$('#again').hide();
-	if (checkWin()) {
-		$('#again').show();
-	} else {}
 	$('.box').click(function() {
-		checkClicked();
+		var whoseTurn = true;
 		if (whoseTurn) { turnRed();
 		whoseTurn = false;
 	} else if (!whoseTurn) { turnBlue();
 		whoseTurn = true;
 	}
-		checkWin();
+		checkClicked();
 	});
+		checkWin();
+	if (checkWin()) {
+		$('#again').show();
+	} else {}
 	$('#again').click(function () {
 		resetBoard();
 	});
