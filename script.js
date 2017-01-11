@@ -19,8 +19,10 @@ function makeClicked() {
 function checkClicked() {
 	if (!$('.box').hasClass('clicked')) {
 	makeClicked();
+	return true;
 	} else {
 	alert("Sorry, that space has already been claimed. Try another one!");
+	return false;
 	}
 }
 function turnRed() {
@@ -116,12 +118,16 @@ function resetBoard() {
 $(document).ready(function() {	
 	$('#again').hide();
 	$('.box').click(function() {
-		checkClicked();
-		if (whoseTurn) { turnRed();
-		whoseTurn = false;
-		} else if (!whoseTurn) { turnBlue();
-		whoseTurn = true;
-		}
+		checkClicked(this);
+		if (checkClicked(this)) {
+			if (whoseTurn) { 
+			turnRed();
+			whoseTurn = false;
+			} else if (!whoseTurn) { 
+			turnBlue();
+			whoseTurn = true;
+			}
+		} else {}
 		checkWin();
 	});
 	if (checkWin()) {
