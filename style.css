@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size:30px;
+}
+
+body {
+	width: 960px;
+	min-height: 700px;
+}
+
+#header, #board {
+	text-align: center;
+}
+
+#board {
+	margin: 75px auto;
+}
+
+
+#a1, #a2, #a3, #b1, #b2, #b3, #c1, #c2, #c3 {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+#a1, #a2, #a3 {
+	border-bottom: dashed 2px black;
+}
+
+#b1, #b2, #b3 {
+	border-bottom: dashed 2px black;
+}
+
+#a2, #b2, #c2 {
+	border-left: dashed 2px black;
+	border-right: dashed 2px black;
+}
+
+.red {
+	background-color: red;
+	background-size: 100px;
+}
+
+.blue {
+	background-color: blue;
+	background-size: 100px;
+}
+
+#again {
+	font-size:14px;
+}
