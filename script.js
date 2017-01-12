@@ -18,7 +18,7 @@ function makeClicked() {
 	};
 function checkClicked() {
 	if (!$('.box').hasClass('clicked')) {
-	makeClicked();
+	makeClicked(this);
 	return true;
 	} else {
 	alert("Sorry, that space has already been claimed. Try another one!");
@@ -118,7 +118,6 @@ function resetBoard() {
 $(document).ready(function() {	
 	$('#again').hide();
 	$('.box').click(function() {
-		checkClicked(this);
 		if (checkClicked(this)) {
 			if (whoseTurn) { 
 			turnRed();
@@ -128,7 +127,6 @@ $(document).ready(function() {
 			whoseTurn = true;
 			}
 		} else {}
-		checkWin();
 		if (checkWin()) {
 			$('#again').show();
 		} else {}
