@@ -3,7 +3,7 @@ var board = ['#a1', '#a2', '#a3', '#b1', '#b2', '#b3', '#c1', '#c2', '#c3'];
 var $1 = $(board[0]);
 var $2 = $(board[1]);
 var $3 = $(board[2]);
-var $4 = $(board[3]);;
+var $4 = $(board[3]);
 var $5 = $(board[4]);
 var $6 = $(board[5]);
 var $7 = $(board[6]);
@@ -16,9 +16,9 @@ function makeClicked() {
 			$(this).addClass('clicked');
 		})
 	};
-function checkClicked() {
-	if (!$('.box').hasClass('clicked')) {
-	makeClicked(this);
+function checkClicked(box) {
+	if (!box.hasClass('clicked')) {
+	makeClicked();
 	return true;
 	} else {
 	alert("Sorry, that space has already been claimed. Try another one!");
@@ -118,12 +118,13 @@ function resetBoard() {
 $(document).ready(function() {	
 	$('#again').hide();
 	$('.box').click(function() {
-		if (checkClicked(this)) {
+		var box = $(this);
+		if (checkClicked(box)) {
 			if (whoseTurn) { 
-			turnRed();
+			turnRed(box);
 			whoseTurn = false;
 			} else if (!whoseTurn) { 
-			turnBlue();
+			turnBlue(box);
 			whoseTurn = true;
 			}
 		} else {}
