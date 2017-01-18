@@ -123,6 +123,7 @@ $(document).ready(function() {
         turnBlue(box);
       }
       whoseTurn = !whoseTurn;
+    }
 
     if (isGameWon()) {
       $('#again').show();
