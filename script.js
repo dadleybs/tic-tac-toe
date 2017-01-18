@@ -18,22 +18,12 @@ $(document).ready(function() {
     box.addClass('clicked');
   }
 
-/*  function isClicked(box) {
-    if (!box.hasClass('clicked')) {
-    makeClicked(box);
-    return true;
-    } else {
-    alert("Sorry, that space has already been claimed. Try another one!");
-    return false;
-    }
-  }
-*/
-
   function isClicked(box) {
     if (box.hasClass('clicked')) {
       return true;
-  } else {
-    return false;
+    } else {
+      return false;
+    }
   }
 
   function turnRed(thisElement) {
