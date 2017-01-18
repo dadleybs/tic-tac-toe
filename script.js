@@ -19,11 +19,7 @@ $(document).ready(function() {
   }
 
   function isClicked(box) {
-    if (box.hasClass('clicked')) {
-      return true;
-    } else {
-      return false;
-    }
+    return box.hasClass('clicked');
   }
 
   function turnRed(thisElement) {
@@ -123,11 +119,10 @@ $(document).ready(function() {
       makeClicked(box);
       if (whoseTurn) { 
         turnRed(box);
-        whoseTurn = false;
-      } else if (!whoseTurn) { 
+      } else { 
         turnBlue(box);
-        whoseTurn = true;
-      } else {}
+      }
+      whoseTurn = !whoseTurn;
 
     if (isGameWon()) {
       $('#again').show();
