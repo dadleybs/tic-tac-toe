@@ -63,7 +63,7 @@ $(document).ready(function() {
       alert("The game is a tie! Try again?");
       $('#again').show();
     }
-  }
+  });
   
   $('#again').click(function () {
     resetBoard();
