@@ -51,66 +51,66 @@ $(document).ready(function() {
     var blue7 = $7.hasClass('blue');
     var blue8 = $8.hasClass('blue');
     var blue9 = $9.hasClass('blue');
-  // check for Red win
-  if (red3 && red5 && red7) {
-    alert("Red wins! How about a rematch?");
-    return true;
-  } else if (red1 && red2 && red3) {
-    alert("Red wins! How about a rematch?");
-    return true;
-  } else if (red1 && red4 && red7) {
-    alert("Red wins! How about a rematch?");
-    return true;
-  } else if (red1 && red5 && red9) {
-    alert("Red wins! How about a rematch?");
-    return true;
-  } else if (red2 && red5 && red8) {
-    alert("Red wins! How about a rematch?");
-    return true;
-  } else if (red3 && red6 && red9) {
-    alert("Red wins! How about a rematch?");
-    return true;
-  } else if (red4 && red5 && red6) {
-    alert("Red wins! How about a rematch?");
-    return true;
-  } else if (red7 && red8 && red9) {
-    alert("Red wins! How about a rematch?");
-    return true;
-  // check for Blue win
-  } else if (blue1 && blue2 && blue3) {
-    alert("Blue wins! How about a rematch?");
-    return true;
-  } else if (blue1 && blue4 && blue7) {
-    alert("Blue wins! How about a rematch?");
-    return true;
-  } else if (blue1 && blue5 && blue9) {
-    alert("Blue wins! How about a rematch?");
-    return true;
-  } else if (blue2 && blue5 && blue8) {
-    alert("Blue wins! How about a rematch?");
-    return true;
-  } else if (blue3 && blue6 && blue9) {
-    alert("Blue wins! How about a rematch?");
-    return true;
-  } else if (blue4 && blue5 && blue6) {
-    alert("Blue wins! How about a rematch?");
-    return true;
-  } else if (blue7 && blue8 && blue9) {
-    alert("Blue wins! How about a rematch?");
-    return true;
-  } else if (blue3 && blue5 && blue7) {
-    alert("Blue wins! How about a rematch?");
-    return true;
-  // check for Draw
-  } else if ($('.clicked').length === 9) {
-    alert("The game is a tie! Try again?");
-    return true;
+    // check for Red win
+    if (red3 && red5 && red7) {
+      alert("Red wins! How about a rematch?");
+      return true;
+    } else if (red1 && red2 && red3) {
+      alert("Red wins! How about a rematch?");
+      return true;
+    } else if (red1 && red4 && red7) {
+      alert("Red wins! How about a rematch?");
+      return true;
+    } else if (red1 && red5 && red9) {
+      alert("Red wins! How about a rematch?");
+      return true;
+    } else if (red2 && red5 && red8) {
+      alert("Red wins! How about a rematch?");
+      return true;
+    } else if (red3 && red6 && red9) {
+      alert("Red wins! How about a rematch?");
+      return true;
+    } else if (red4 && red5 && red6) {
+      alert("Red wins! How about a rematch?");
+      return true;
+    } else if (red7 && red8 && red9) {
+      alert("Red wins! How about a rematch?");
+      return true;
+    // check for Blue win
+    } else if (blue1 && blue2 && blue3) {
+      alert("Blue wins! How about a rematch?");
+      return true;
+    } else if (blue1 && blue4 && blue7) {
+      alert("Blue wins! How about a rematch?");
+      return true;
+    } else if (blue1 && blue5 && blue9) {
+      alert("Blue wins! How about a rematch?");
+      return true;
+    } else if (blue2 && blue5 && blue8) {
+      alert("Blue wins! How about a rematch?");
+      return true;
+    } else if (blue3 && blue6 && blue9) {
+      alert("Blue wins! How about a rematch?");
+      return true;
+    } else if (blue4 && blue5 && blue6) {
+      alert("Blue wins! How about a rematch?");
+      return true;
+    } else if (blue7 && blue8 && blue9) {
+      alert("Blue wins! How about a rematch?");
+      return true;
+    } else if (blue3 && blue5 && blue7) {
+      alert("Blue wins! How about a rematch?");
+      return true;
+    // check for Draw
+    } else if ($('.clicked').length === 9) {
+      alert("The game is a tie! Try again?");
+      return true;
+    }
+  };
+  function resetBoard() {
+    $('.box').removeClass('red blue clicked');
+    $('#again').hide();
   }
-};
-function resetBoard() {
-  $('.box').removeClass('red blue clicked');
-  $('#again').hide();
-}
   $('.box').click(function() {
     var box = $(this);
     if (checkClicked(box)) {
