@@ -18,7 +18,7 @@ $(document).ready(function() {
     box.addClass('clicked');
   }
 
-  function checkClicked(box) {
+/*  function isClicked(box) {
     if (!box.hasClass('clicked')) {
     makeClicked(box);
     return true;
@@ -26,6 +26,14 @@ $(document).ready(function() {
     alert("Sorry, that space has already been claimed. Try another one!");
     return false;
     }
+  }
+*/
+
+  function isClicked(box) {
+    if (box.hasClass('clicked')) {
+      return true;
+  } else {
+    return false;
   }
 
   function turnRed(thisElement) {
@@ -36,7 +44,7 @@ $(document).ready(function() {
     thatElement.addClass('blue');
   }
 
-  function checkWin() {
+  function isGameWon() {
     var red1 = $1.hasClass('red');
     var red2 = $2.hasClass('red');
     var red3 = $3.hasClass('red');
@@ -119,20 +127,23 @@ $(document).ready(function() {
 
   $('.box').click(function() {
     var box = $(this);
-    if (checkClicked(box)) {
+    if (isClicked(box)) {
+      alert("Sorry, that space has already been claimed. Try another one!");
+    } else {
+      makeClicked(box);
       if (whoseTurn) { 
         turnRed(box);
         whoseTurn = false;
       } else if (!whoseTurn) { 
         turnBlue(box);
         whoseTurn = true;
-      }
-    } else {}
-    if (checkWin()) {
+      } else {}
+
+    if (isGameWon()) {
       $('#again').show();
     } else {}
   });
-
+  
   $('#again').click(function () {
     resetBoard();
   });
