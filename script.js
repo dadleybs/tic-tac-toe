@@ -16,7 +16,8 @@ $(document).ready(function() {
 
   function makeClicked(box) {
     box.addClass('clicked');
-  };
+  }
+
   function checkClicked(box) {
     if (!box.hasClass('clicked')) {
     makeClicked(box);
@@ -26,12 +27,15 @@ $(document).ready(function() {
     return false;
     }
   }
+
   function turnRed(thisElement) {
     thisElement.addClass('red');
-  };
+  }
+
   function turnBlue(thatElement) {
     thatElement.addClass('blue');
-  };
+  }
+
   function checkWin() {
     var red1 = $1.hasClass('red');
     var red2 = $2.hasClass('red');
@@ -106,26 +110,29 @@ $(document).ready(function() {
       alert("The game is a tie! Try again?");
       return true;
     }
-  };
+  }
+
   function resetBoard() {
     $('.box').removeClass('red blue clicked');
     $('#again').hide();
   }
+
   $('.box').click(function() {
     var box = $(this);
     if (checkClicked(box)) {
       if (whoseTurn) { 
-      turnRed(box);
-      whoseTurn = false;
+        turnRed(box);
+        whoseTurn = false;
       } else if (!whoseTurn) { 
-      turnBlue(box);
-      whoseTurn = true;
+        turnBlue(box);
+        whoseTurn = true;
       }
     } else {}
     if (checkWin()) {
       $('#again').show();
     } else {}
   });
+
   $('#again').click(function () {
     resetBoard();
   });
