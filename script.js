@@ -52,14 +52,13 @@ $(document).ready(function() {
       }
       whoseTurn = !whoseTurn;
     }
-
     if (hasPlayerWon('blue')) {
       alert("Blue wins! How about a rematch?");
       $('#again').show();
     } else if (hasPlayerWon('red')) {
       alert("Red wins! How about a rematch?");
       $('#again').show();
-    } else if ($('.clicked').length === 9)) {
+    } else if ($('.clicked').length === 9) {
       alert("The game is a tie! Try again?");
       $('#again').show();
     }
