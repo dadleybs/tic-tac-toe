@@ -3,7 +3,7 @@
 $(document).ready(function() {	
   $('#again').hide();
   var board = ['#a1', '#a2', '#a3', '#b1', '#b2', '#b3', '#c1', '#c2', '#c3'];
-  var boxes = _.map(board, $);
+  var boxes = _.map(board, function(e) { return $(e); } );
   var whoseTurn = true;
 
   function makeClicked(box) {
