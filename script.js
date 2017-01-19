@@ -14,12 +14,12 @@ $(document).ready(function() {
     return box.hasClass('clicked');
   }
 
-  function turnRed(thisElement) {
-    thisElement.addClass('red');
+  function turnRed(box) {
+    box.addClass('red');
   }
 
-  function turnBlue(thatElement) {
-    thatElement.addClass('blue');
+  function turnBlue(box) {
+    box.addClass('blue');
   }
 
   function hasPlayerWon(player) {
